@@ -7,7 +7,7 @@ const days=(a,b)=>Math.round((epoch(b)-epoch(a))/86400000);
 const nextDay=(d,n)=>new Date(epoch(d)+n*86400000).toISOString().slice(0,10);
 const cents=n=>Math.round(Number(n)*100);
 const currencies=['USD','PKR','GBP','EUR','CAD','AUD','INR','AED','SAR','QAR','BDT','NZD','SGD','MYR','ZAR'];
-function blank(){return {version:1,currency:'USD',balance:0,reserve:0,payday:'',configured:false,transactions:[],bills:[],goals:[],tasks:[],notes:[],wishes:[],energy:{},theme:'light',savedAt:null};}
+function blank(){return {version:1,currency:'USD',balance:0,reserve:0,payday:'',configured:false,transactions:[],bills:[],goals:[],tasks:[],notes:[],wishes:[],energy:{},theme:'dark',colourScheme:'plum-lavender-v1',savedAt:null};}
 function summary(s,today=localDay()){
  const tx=s.transactions.filter(t=>t.date<=today);
  const income=tx.filter(t=>t.kind==='income').reduce((a,t)=>a+t.amount,0);
@@ -27,6 +27,7 @@ function forecast(s,today=localDay()){
  return out;
 }
 function validate(s){
+ if(s&&s.colourScheme!=='plum-lavender-v1'){s.theme='dark';s.colourScheme='plum-lavender-v1';}
  const integer=n=>Number.isSafeInteger(n)&&n>=0&&n<=1e13;
  const text=(t,max=2000)=>typeof t==='string'&&t.trim().length>0&&t.length<=max;
  if(!s||s.version!==1||!currencies.includes(s.currency)||!integer(s.balance)||!integer(s.reserve)||typeof s.configured!=='boolean'||!(s.payday===''||validDay(s.payday))||!['light','dark'].includes(s.theme))throw Error('Invalid planner settings.');
