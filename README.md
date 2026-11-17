@@ -27,6 +27,8 @@ This public repository contains only the static app files. It does not contain t
 
 ## Install as an app
 
+The installation controls inside **My space** require an access code from the planner owner. This in-app gate does not block the browser's native installation features or protect the public source as a licensing system.
+
 - **iOS/iPadOS:** open the HTTPS site in Safari → Share → Add to Home Screen.
 - **Windows:** open in Edge or Chrome and choose Install app from the browser menu.
 - Load online once before offline use. Browser and OS installation behavior can vary.
