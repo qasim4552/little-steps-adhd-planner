@@ -1,0 +1,13 @@
+node_modules/
+.npm-cache/
+.electron-cache/
+.builder-cache/
+.tmp/
+test-results/
+app/
+electron-runtime.zip
+app/
+build/
+test-results/
+test-profile*/
+*.log

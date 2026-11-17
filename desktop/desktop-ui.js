@@ -1,0 +1,5 @@
+/* Desktop-specific copy; uses only the tightly scoped preload bridge. */
+(async()=>{if(!window.desktopApp?.isDesktop)return;const info=await window.desktopApp.getInfo();document.body.classList.add('desktop-edition');document.getElementById('install').closest('article').innerHTML='<h2>Your personal desktop app</h2><p>Little Steps is already installed as Windows software and works offline. Your data stays in this Windows user profile.</p><p id="desktop-data-path"></p><button id="open-desktop-data" class="quiet">Open my data folder</button><small id="desktop-version"></small>';
+document.getElementById('desktop-data-path').textContent=info.dataFolder;document.getElementById('desktop-data-path').style.overflowWrap='anywhere';document.getElementById('desktop-version').textContent='Little Steps Planner '+info.version;document.getElementById('open-desktop-data').onclick=()=>window.desktopApp.openDataFolder();
+const theme=document.createElement('button');theme.className='quiet';theme.textContent='Switch light / dark';theme.onclick=()=>change(s=>s.theme=s.theme==='dark'?'light':'dark');document.getElementById('open-desktop-data').after(theme);
+})();
