@@ -27,6 +27,16 @@ This public repository contains only the static app files. It does not contain t
 
 ## Install as an app
 
+### Windows desktop software (.exe)
+
+**[Download the Windows release](https://github.com/qasim4552/little-steps-adhd-planner/releases/tag/v1.0.0)** — choose Setup for installation or Portable to run without installing. The owner’s activation code is required on the first launch for each Windows user profile. Your personal settings and data persist across restarts. Python and an open browser/server are not required. This initial x64 release is unsigned; Windows may show an unrecognized-publisher notice.
+
+The desktop edition stores data in `%APPDATA%\Little Steps Planner`. It does not contain the owner's data or automatically synchronize devices. Use JSON backup/restore to move an existing web planner into the desktop edition. The installed and portable editions share data when used by the same Windows profile. iOS cannot run Windows `.exe` files.
+
+Desktop source and build instructions are in [desktop/](desktop/).
+
+### Web app
+
 The installation controls inside **My space** require an access code from the planner owner. This in-app gate does not block the browser's native installation features or protect the public source as a licensing system.
 
 - **iOS/iPadOS:** open the HTTPS site in Safari → Share → Add to Home Screen.
