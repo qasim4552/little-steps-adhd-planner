@@ -1,0 +1,7 @@
+*.db
+*.db-*
+.env*
+*backup*.json
+__pycache__/
+node_modules/
+.python-packages/
